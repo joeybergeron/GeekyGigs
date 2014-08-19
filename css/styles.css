@@ -46,8 +46,9 @@ p {
     background-color:rgba(3,3,3,.7);
 }
 select {
-    height: 50px;
+    height: 60px;
     width: 200px;
+    font-size:1.2em;
 }
 button {
     height: 90px;
@@ -93,7 +94,13 @@ h2 {
     text-shadow:3px 3px 3px black;
 }
 table {
-
+width:100px;
+}
+th {
+    width:100px;
+}
+td {
+    width:100px;
 }
 .jobContainer {
     position:relative;
