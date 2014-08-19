@@ -18,23 +18,23 @@
 
 var JobsView = Backbone.View.extend({
 
-	el: document.querySelector(".searchContainer"),
+    el: document.querySelector(".searchContainer"),
 
     initialize: function() {
-    	console.log(this.el)
+        console.log(this.el)
         this.render();
     },
 
     events: {
-    	"submit form": "handleSearch"
+        "submit form": "handleSearch"
     },
 
-    handleSearch: function(e){
-    	e.preventDefault(); //prevent from refreshing
-    	var inputs = this.el.querySelectorAll("input");
-    	var result = this.convertSearchTermsToKeywordArray(inputs[0].value);
-    	console.log(result)
-    	this.render(result);
+    handleSearch: function(e) {
+        e.preventDefault(); //prevent from refreshing
+        var inputs = this.el.querySelectorAll("input");
+        var result = this.convertSearchTermsToKeywordArray(inputs[0].value);
+        console.log(result)
+        this.render(result);
     },
 
     getTemplateFill: function() {
@@ -43,34 +43,34 @@ var JobsView = Backbone.View.extend({
         })
     },
 
-    searchForKeywords: function(keyword_array, textDescription){
-    	// keyword_array e.g. ['js', 'javascript', 'html5']
-    	var keywordsInDescription = _.map(keyword_array, function(keyword){
-    		var regex = new RegExp(keyword, 'ig');
-    		var result = textDescription.match(regex);
-    		return result ? result.length : 0;
-    	})
-    	return keywordsInDescription;
+    searchForKeywords: function(keyword_array, textDescription) {
+        // keyword_array e.g. ['js', 'javascript', 'html5']
+        var keywordsInDescription = _.map(keyword_array, function(keyword) {
+            var regex = new RegExp(keyword, 'ig');
+            var result = textDescription.match(regex);
+            return result ? result.length : 0;
+        })
+        return keywordsInDescription;
     },
 
     urlEmail: function() {
-    	return data.listings.listing[0].apply_url ? data.listings.listing[0].apply_url.length : data.listings.listing[0].apply_email;
+        return data.listings.listing[0].apply_url ? data.listings.listing[0].apply_url.length : data.listings.listing[0].apply_email;
     },
 
-    convertSearchTermsToKeywordArray: function(oneBigGiantSearchString){
-    	var result = oneBigGiantSearchString.split(',').map(function(s){
-		    return s.trim();
-		});
+    convertSearchTermsToKeywordArray: function(oneBigGiantSearchString) {
+        var result = oneBigGiantSearchString.split(',').map(function(s) {
+            return s.trim();
+        });
 
-		return result;
+        return result;
     },
 
 
     render: function(keywordArray) {
-    	// example that turns a string of comma seperated keywords into an array of keywords
-    	///
+        // example that turns a string of comma seperated keywords into an array of keywords
+        ///
 
-    	var self = this;
+        var self = this;
         var url = [
             "/authenticjobs",
             "?api_key=",
@@ -95,10 +95,10 @@ var JobsView = Backbone.View.extend({
         ).then(function(data, templateFn) {
             var HTML = "";
             _.forEach(data[0].listings.listing, function(oneListing) {
-            	var occurrences = self.searchForKeywords(keywordArray, oneListing.description)
-            	console.log(occurrences);
-            	// oneListing.keyWordOccurences = occurrences;
-            	HTML += templateFn(oneListing);
+                var occurrences = self.searchForKeywords(keywordArray, oneListing.description)
+                console.log(occurrences);
+                // oneListing.keyWordOccurences = occurrences;
+                HTML += templateFn(oneListing);
             })
             $('.results').html(HTML);
         });
