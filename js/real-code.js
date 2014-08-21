@@ -16,13 +16,29 @@
 //     }
 // })
 
+////////////////////// VIEW ////////////////////////
+
+
 var JobsView = Backbone.View.extend({
+
+	scrollStop: function(){
+		var s = $("form");
+		var pos = s.position();
+		$(window).scroll(function() {
+			var windowpos = $(window).scrollT
+			if (windowpos >= pos.top) {
+				s.addClass("form");
+			} else {
+				s.removeClass("form");
+			}
+		});
+	},
 
     el: document.querySelector(".searchContainer"),
 
     initialize: function() {
-        console.log(this.el)
         this.render();
+        // this.scrollStop(); // not touching this yet, but should handle "fixing" the search to the top of the page
     },
 
     events: {
@@ -33,7 +49,6 @@ var JobsView = Backbone.View.extend({
         e.preventDefault(); //prevent from refreshing
         var inputs = this.el.querySelectorAll("input");
         var result = this.convertSearchTermsToKeywordArray(inputs[0].value);
-        console.log(result)
         this.render(result);
     },
 
@@ -52,6 +67,7 @@ var JobsView = Backbone.View.extend({
         })
         return keywordsInDescription;
     },
+
 
     urlEmail: function() {
         return data.listings.listing[0].apply_url ? data.listings.listing[0].apply_url.length : data.listings.listing[0].apply_email;
@@ -79,7 +95,7 @@ var JobsView = Backbone.View.extend({
             "aj.jobs.search",
             "&format=",
             "json"
-        ]
+        ];
         var fullURL = url.join("");
 
         var testCollection = new AuthenticJobsCollection({
@@ -90,20 +106,34 @@ var JobsView = Backbone.View.extend({
             // sort: ""
         });
 
-        $.when(testCollection.fetch(),
+        $.when(
+        	testCollection.fetch(),
             this.getTemplateFill()
         ).then(function(data, templateFn) {
             var HTML = "";
             _.forEach(data[0].listings.listing, function(oneListing) {
-                var occurrences = self.searchForKeywords(keywordArray, oneListing.description)
-                console.log(occurrences);
-                // oneListing.keyWordOccurences = occurrences;
+                
+                // var occurrences = self.searchForKeywords(keywordArray, oneListing.description)
+                // console.log(occurrences);
+
+                if(oneListing.apply_url){
+                	oneListing.apply_link = oneListing.apply_url;
+                } else if (oneListing.apply_email) {
+                	oneListing.apply_link = "mailto:"+oneListing.apply_email;
+                } else {
+                	oneListing.apply_link = "#";
+                }
+
                 HTML += templateFn(oneListing);
             })
-            $('.results').html(HTML);
+            $('.templateDestination').html(HTML);
         });
     }
 });
+
+
+
+////////////////// COLLECTION /////////////////////////
 
 var AuthenticJobsCollection = Backbone.Collection.extend({
     initialize: function(options) {
@@ -148,6 +178,8 @@ var AuthenticJobsCollection = Backbone.Collection.extend({
     }
 })
 
+//////////////////////// MODEL ///////////////////////////
+
 var JobModel = Backbone.Model.extend({
     defaults: {
         title: 'Job Title',
@@ -155,6 +187,8 @@ var JobModel = Backbone.Model.extend({
         location: 'Location'
     }
 });
+
+/////////////////////// EXECUTION ////////////////////////
 
 window.onload = app;
 

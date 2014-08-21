@@ -12,8 +12,9 @@
 
 <body>
     <div class="container">
-
+        
         <div class="searchContainer">
+
             <p>Geeky Gigs</p>
             <h1>Looking for a geeky gig?</h1>
             <form method="POST" action="#">
@@ -21,7 +22,7 @@
                 <input placeholder="enter search terms" type="text">
                 <input id="the_right_way" class="zipcode" type="text" value="" placeholder="enter zipcode" pattern="\d*">
                 <input type="submit" value="search">
-                
+
                 <div class="filter">
                     <h2>Filter by:</h2>
                     <select>
@@ -37,19 +38,34 @@
             </form>
         </div>
 
+        <!-- <table class="results">
+            <thead>
+                <tr>
+                    <th>Job Title</th>
+                    <th>Company</th>
+
+                    <th>Location</th>
+                    <th>Posted</th>
+                    <th>Salary</th>
+                    <th>Experience</th>
+                    <th>Job ID</th>
+                </tr>
+            </thead>
+            <tbody class="templateDestination"></tbody>
+        </table> -->
+
         <div class="jobContainer">
-            <div class="results">
-
-
+            <div class="grid grid-7-800">
+                <span>Job Title</span>
+                <span>Company</span>
+                <span>Location</span>
+                <span>Posted</span>
+                <span>Salary</span>
+                <span>Experience</span>
+                <span>Job ID</span>
             </div>
-
-
-
-
+            <div class="templateDestination grid grid-7-800"></div>
         </div>
-
-
-
 
         <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.js"></script>
         <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.js"></script>

@@ -1,32 +1,9 @@
 
-<div class="jobResults">
-    <table>
-        <thead>
-            <tr>
-            	<th>Job Title</th>
-            	<!-- <th>Description</th> -->
-            	<th>Company</th>
-                
-                <th>Location</th>
-                <th>Posted</th>
-                <th>Salary</th>
-                <th>Experience</th>
-                <th>Job ID</th>
-              
-
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-            	<td><a href = "#"><%= title %></a></td>
-            	<!-- <td> description </td> -->
-            	<td><a href = "<%= company.url %>"><%= company.name %> </a> </td>
-                <td><%= company.location.city %></td>
-                <td><%= post_date %>
-                <td>$$$$</td>
-                <td>####</td>
-                <td><%= id %></td>
-            </tr>
-        </tbody>
-	</table>
-</div>
+<span><a href = "<%= apply_link %>"><%= title %></a></span>
+<!-- <span> description </span> -->
+<span><a href = "<%= company.url %>"><%= company.name %> </a> </span>
+<span><%= company.location.city %></span>
+<span><%= post_date %></span>
+<span>$$$$</span>
+<span>####</span>
+<span><%= id %></span>
