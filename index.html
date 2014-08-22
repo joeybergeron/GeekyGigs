@@ -12,15 +12,15 @@
 
 <body>
     <div class="container">
-        
+
         <div class="searchContainer">
 
             <p>Geeky Gigs</p>
             <h1>Looking for a geeky gig?</h1>
             <form method="POST" action="#">
 
-                <input placeholder="enter search terms" type="text">
-                <input id="the_right_way" class="zipcode" type="text" value="" placeholder="enter zipcode" pattern="\d*">
+                <input placeholder="enter search terms" type="text" name="search" value="javascript">
+                <input class="zipcode" type="text" value="" placeholder="search for a location" name="location"> <!-- pattern="\d*" -->
                 <input type="submit" value="search">
 
                 <div class="filter">
@@ -55,7 +55,7 @@
         </table> -->
 
         <div class="jobContainer">
-            <div class="grid grid-7-800">
+            <div class="grid grid-7-800 grid-header">
                 <span>Job Title</span>
                 <span>Company</span>
                 <span>Location</span>
@@ -64,7 +64,7 @@
                 <span>Experience</span>
                 <span>Job ID</span>
             </div>
-            <div class="templateDestination grid grid-7-800"></div>
+            <div class="templateDestination"></div>
         </div>
 
         <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.js"></script>

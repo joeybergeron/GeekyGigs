@@ -98,7 +98,14 @@ h2 {
     background: radial-gradient(RGBA(155, 224, 239, 1), RGBA(177, 194, 209, 1), RGBA(81, 122, 159, 1));
     border:2px outset black;
 }
-
+.grid-header {
+    background-color: rgba(255,255,255,0.4);
+    border-bottom:2px solid black;
+}
+.templateDestination .grid {
+    padding: 16px 0;
+    border-bottom: 2px solid rgba(255,255,255,0.4);
+}
 
 /* turn lodash data into link, remove HTML from description */
 

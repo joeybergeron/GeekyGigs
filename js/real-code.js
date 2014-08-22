@@ -47,9 +47,9 @@ var JobsView = Backbone.View.extend({
 
     handleSearch: function(e) {
         e.preventDefault(); //prevent from refreshing
-        var inputs = this.el.querySelectorAll("input");
-        var result = this.convertSearchTermsToKeywordArray(inputs[0].value);
-        this.render(result);
+        var search = this.el.querySelector('[name="search"]');
+        var location = this.el.querySelector('[name="location"]');
+        this.render(search.value.trim(), location.value.trim());
     },
 
     getTemplateFill: function() {
@@ -58,31 +58,13 @@ var JobsView = Backbone.View.extend({
         })
     },
 
-    searchForKeywords: function(keyword_array, textDescription) {
-        // keyword_array e.g. ['js', 'javascript', 'html5']
-        var keywordsInDescription = _.map(keyword_array, function(keyword) {
-            var regex = new RegExp(keyword, 'ig');
-            var result = textDescription.match(regex);
-            return result ? result.length : 0;
-        })
-        return keywordsInDescription;
-    },
-
 
     urlEmail: function() {
         return data.listings.listing[0].apply_url ? data.listings.listing[0].apply_url.length : data.listings.listing[0].apply_email;
     },
 
-    convertSearchTermsToKeywordArray: function(oneBigGiantSearchString) {
-        var result = oneBigGiantSearchString.split(',').map(function(s) {
-            return s.trim();
-        });
 
-        return result;
-    },
-
-
-    render: function(keywordArray) {
+    render: function(searchValue, locationValue) {
         // example that turns a string of comma seperated keywords into an array of keywords
         ///
 
@@ -98,23 +80,35 @@ var JobsView = Backbone.View.extend({
         ];
         var fullURL = url.join("");
 
-        var testCollection = new AuthenticJobsCollection({
-            location: "tx",
-            keywords: "javascript",
+        var ajCollection = new AuthenticJobsCollection({
+            location: locationValue,
+            keywords: searchValue,
             perpage: 100,
             page: 1,
             // sort: ""
         });
 
         $.when(
-        	testCollection.fetch(),
+        	ajCollection.fetch(),
             this.getTemplateFill()
         ).then(function(data, templateFn) {
             var HTML = "";
             _.forEach(data[0].listings.listing, function(oneListing) {
-                
-                // var occurrences = self.searchForKeywords(keywordArray, oneListing.description)
-                // console.log(occurrences);
+                console.log(oneListing);
+
+                if(!oneListing.company){
+                    oneListing.company = {
+                        url: oneListing.url,
+                        name: "",
+                    }
+                }
+
+                if(!oneListing.company.location) {
+                    oneListing.company.location = {};
+                }
+                if(!oneListing.company.location){
+                    oneListing.company.location.city = "";
+                }
 
                 if(oneListing.apply_url){
                 	oneListing.apply_link = oneListing.apply_url;
