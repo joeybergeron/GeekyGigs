@@ -12,61 +12,63 @@
 </head>
 
 <body>
-    <div class="container">
+    <div class="parallax">
+        <div class="container">
 
-        <div class="searchContainer">
+            <div class="searchContainer">
 
-            <p id = "tag">Geeky Gigs</p>
-            
-            <form method="POST" action="#">
-                <h1>Looking for a geeky gig?</h1>
-                <input placeholder="enter search terms" type="text" name="search" value="javascript">
-                <input class="zipcode" type="text" value="" placeholder="search for a location" name="location"> <!-- pattern="\d*" -->
-                <input type="submit" value="search">
+                <p id = "tag">Geeky Gigs</p>
+                
+                <form method="POST" action="#">
+                    <h1>Looking for a geeky gig?</h1>
+                    <input placeholder="enter search terms" type="text" name="search" value="javascript">
+                    <input class="zipcode" type="text" value="" placeholder="search for a location" name="location"> <!-- pattern="\d*" -->
+                    <input type="submit" value="search">
 
-                <!-- <div class="filter">
-                    <h2>Filter by:</h2>
-                    <select>
+                    <!-- <div class="filter">
+                        <h2>Filter by:</h2>
+                        <select>
 
-                        <option value="location">Location</option>
-                        <option value="salary">Salary</option>
-                        <option value="location">Years Experience</option>
+                            <option value="location">Location</option>
+                            <option value="salary">Salary</option>
+                            <option value="location">Years Experience</option>
 
-                    </select>
-                </div> -->
+                        </select>
+                    </div> -->
 
 
-            </form>
-        </div>
-
-        <!-- <table class="results">
-            <thead>
-                <tr>
-                    <th>Job Title</th>
-                    <th>Company</th>
-
-                    <th>Location</th>
-                    <th>Posted</th>
-                    <th>Salary</th>
-                    <th>Experience</th>
-                    <th>Job ID</th>
-                </tr>
-            </thead>
-            <tbody class="templateDestination"></tbody>
-        </table> -->
-
-        <div class="jobContainer">
-            <div class="grid grid-7-800 grid-header">
-                <span class = "head">Job Title</span>
-                <span class = "head">Company</span>
-                <span class = "head">Location</span>
-                <span class = "head">Posted</span>
-                <span class = "head">Interested?</span>
-                <!-- <span>Experience</span>
-                <span>Job ID</span -->>
+                </form>
             </div>
-            <div class="templateDestination"></div>
-        </div>
+
+            <!-- <table class="results">
+                <thead>
+                    <tr>
+                        <th>Job Title</th>
+                        <th>Company</th>
+
+                        <th>Location</th>
+                        <th>Posted</th>
+                        <th>Salary</th>
+                        <th>Experience</th>
+                        <th>Job ID</th>
+                    </tr>
+                </thead>
+                <tbody class="templateDestination"></tbody>
+            </table> -->
+
+            <div class="jobContainer">
+                <div class="grid grid-7-800 grid-header">
+                    <span class = "head">Job Title</span>
+                    <span class = "head">Company</span>
+                    <span class = "head">Location</span>
+                    <span class = "head">Posted</span>
+                    <span class = "head">Interested?</span>
+                    <!-- <span>Experience</span>
+                    <span>Job ID</span -->>
+                </div>
+                <div class="templateDestination"></div>
+            </div>
+    </div>
 
         <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.js"></script>
         <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.js"></script>

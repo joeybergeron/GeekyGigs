@@ -26,6 +26,14 @@ header {
     position: fixed;
     font-size: 1.5em;
 }
+.parallax {
+    /*height:50vh;*/
+    /*text-indent: -9999px;*/
+    background: url("./icons2.png");
+    background-attachment: fixed;
+    background-position: center center;
+    /*background-size:cover;*/
+}
 .searchContainer {
     padding-top: 175px;
     padding-bottom: 175px;
@@ -34,7 +42,7 @@ header {
     /*left: 0;*/
     width: 100%;
     /*height: 400px;*/
-    background: url("./icons2.png");
+    background:transparent;
 }
 .filter {
     margin-top: 20px;
@@ -93,7 +101,7 @@ form {
     padding-top:1em;
     padding-bottom: 1em;
     text-align: center;
-    background-color:rgba(3, 3, 3, .7);
+    background-color:rgba(3, 3, 3, .85);
 }
 h1 {
     /*padding-top: 100px;*/
@@ -113,9 +121,6 @@ h2 {
 .jobContainer {
     background: white;
     border: 2px outset black;
-}
-.apply {
-    padding-left:60px;
 }
 .grid-header {
     background-color: RGBA(3, 3, 3, 1);
@@ -142,6 +147,7 @@ h2 {
     font-size: 0.1px;
 }
 .grid > * {
+    padding-left:10px;
     display: inline-block;
     text-align: left;
     vertical-align: top;
