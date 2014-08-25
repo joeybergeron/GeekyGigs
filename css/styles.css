@@ -27,8 +27,8 @@ header {
     font-size: 1.5em;
 }
 .searchContainer {
-    padding-top: 100px;
-    padding-bottom: 150px;
+    padding-top: 175px;
+    padding-bottom: 175px;
     /*position: fixed;*/
     /*top: 0;*/
     /*left: 0;*/
@@ -87,16 +87,18 @@ button:focus {
 }
 form {
     display:block;
-    width: 100%;
+    max-width: 37%;
+    margin:0 auto;
+    border-radius:4px;
     padding-top:1em;
     padding-bottom: 1em;
     text-align: center;
     background-color:rgba(3, 3, 3, .7);
 }
 h1 {
-    margin-top: 100px;
+    /*padding-top: 100px;*/
     text-align: center;
-    font-size: 1em;
+    font-size: 1.5em;
     font-weight: 300;
     color: white;
     text-shadow: 3px 3px 3px black;
@@ -112,6 +114,9 @@ h2 {
     background: white;
     border: 2px outset black;
 }
+.apply {
+    padding-left:60px;
+}
 .grid-header {
     background-color: RGBA(3, 3, 3, 1);
     border-bottom: 2px solid black;
@@ -126,6 +131,12 @@ h2 {
  * ------------------------------------------------------- grids
  */
 
+#title {
+    font-weight: bold;
+    color:indigo;
+    padding-left:10px;
+    /*text-decoration:bold;*/
+}
 .grid {
     text-align: justify;
     font-size: 0.1px;
@@ -141,7 +152,7 @@ h2 {
 }
 .grid > .head {
     font-size: 30px;
-    color: gray;
+    color: white;
 }
 .grid:after {
     content: '';
