@@ -8,6 +8,7 @@
     "express": "^4.6.1",
     "http-proxy": "^1.2.0",
     "method-override": "^2.1.1",
+    "moment": "^2.8.2",
     "myth": "^1.1.0",
     "request": "^2.40.0"
   },

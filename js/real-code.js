@@ -118,6 +118,8 @@ var JobsView = Backbone.View.extend({
                 	oneListing.apply_link = "#";
                 }
 
+                oneListing.post_date = moment(oneListing.post_date, "YYYY-MM-DD hh:mm:ss").format('LL')
+
                 HTML += templateFn(oneListing);
             })
             $('.templateDestination').html(HTML);

@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+
     <link rel="stylesheet" type="text/css" href="./css/normalize.css">
     <link rel="stylesheet" type="text/css" href="./css/typeplate.css">
     <link rel="stylesheet" type="text/css" href="./css/styles.css">
@@ -15,7 +16,7 @@
 
         <div class="searchContainer">
 
-            <p>Geeky Gigs</p>
+            <p id = "tag">Geeky Gigs</p>
             <h1>Looking for a geeky gig?</h1>
             <form method="POST" action="#">
 
@@ -23,7 +24,7 @@
                 <input class="zipcode" type="text" value="" placeholder="search for a location" name="location"> <!-- pattern="\d*" -->
                 <input type="submit" value="search">
 
-                <div class="filter">
+                <!-- <div class="filter">
                     <h2>Filter by:</h2>
                     <select>
 
@@ -32,7 +33,7 @@
                         <option value="location">Years Experience</option>
 
                     </select>
-                </div>
+                </div> -->
 
 
             </form>
@@ -56,13 +57,13 @@
 
         <div class="jobContainer">
             <div class="grid grid-7-800 grid-header">
-                <span>Job Title</span>
-                <span>Company</span>
-                <span>Location</span>
-                <span>Posted</span>
-                <span>Salary</span>
-                <span>Experience</span>
-                <span>Job ID</span>
+                <span class = "head">Job Title</span>
+                <span class = "head">Company</span>
+                <span class = "head">Location</span>
+                <span class = "head">Posted</span>
+                <span class = "head">Interested?</span>
+                <!-- <span>Experience</span>
+                <span>Job ID</span -->>
             </div>
             <div class="templateDestination"></div>
         </div>
@@ -71,6 +72,7 @@
         <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.js"></script>
         <script type="text/javascript" src="./js/backbone.js"></script>
         <script type="text/javascript" src="./js/real-code.js"></script>
+        <script type="text/javascript" src="./js/moment.js"></script>
 </body>
 
 </html>
