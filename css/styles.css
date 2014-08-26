@@ -42,7 +42,7 @@ header {
     /*left: 0;*/
     width: 100%;
     /*height: 400px;*/
-    background:transparent;
+    background: transparent;
 }
 .filter {
     margin-top: 20px;
@@ -51,7 +51,8 @@ p {
     right: 0;
     top: 53px;
     animation: tag 2s;
-    padding-left: 30px;
+    padding-left: 10px;
+    padding-bottom:20px;
     padding-right: 30px;
     border-radius: 4px;
     font-size: 1.8em;
@@ -60,6 +61,10 @@ p {
     text-shadow: 3px 3px 3px #111;
     background-color: rgba(3, 3, 3, .9);
     /*transform:translateX(10px);*/
+}
+img {
+    position:relative;
+    top:19px;
 }
 @-webkit-keyframes tag {
     0% {
@@ -94,22 +99,22 @@ button:focus {
     background-color: #222;
 }
 input:hover {
-    background-color:#222;
-    color:RGBA(30,113,183,.7);
+    background-color: #222;
+    color: RGBA(30, 113, 183, .7);
 }
 input:active {
-    background-color:#222;
-    color:RGBA(30,113,183,.7);
+    background-color: #222;
+    color: RGBA(30, 113, 183, .7);
 }
 form {
-    display:block;
+    display: block;
     width: 48%;
-    margin:0 auto;
-    border-radius:4px;
-    padding-top:1em;
+    margin: 0 auto;
+    border-radius: 4px;
+    padding-top: 1em;
     padding-bottom: 1em;
     text-align: center;
-    background-color:rgba(3, 3, 3, .9);
+    background-color: rgba(3, 3, 3, .9);
 }
 h1 {
     /*padding-top: 100px;*/
@@ -138,33 +143,31 @@ h2 {
     padding: 16px 0;
     border-bottom: 2px outset rgba(10, 10, 10, 0.4);
 }
-
-
 /*-------------------------------------------------scroll stickies
 */
+
 .stick {
     transition: all .20s ease;
-    position:fixed;
-    top:0px;
-    left:50%;
-    width:100%;
-    transform:translateX(-50%);
+    position: fixed;
+    top: 0px;
+    left: 50%;
+    width: 100%;
+    transform: translateX(-50%);
 }
 .head1 {
     transition: all .20s ease;
-    position:fixed;
-    top:106px;
-    width:100%;
+    position: fixed;
+    top: 106px;
+    width: 100%;
 }
 .stick h1 {
-    display:none;
+    display: none;
 }
-
 .tag {
     transition: all .20s ease;
-    position:fixed;
-    top:157px;
-    right:0px;
+    position: fixed;
+    top: 157px;
+    right: 0px;
 }
 /* turn lodash data into link, remove HTML from description */
 
@@ -172,18 +175,28 @@ h2 {
  * ------------------------------------------------------- grids
  */
 
+a {
+    text-decoration: inherit;
+    /*font-style: inherit;*/
+    /*color: inherit;*/
+}
+a:hover {
+ text-decoration: none;
+ color: #a3211f;
+}
+a:visited {
+    color:indigo;
+}
 #title {
     font-weight: bold;
-    color:indigo;
-    padding-left:10px;
-    /*text-decoration:bold;*/
+    color: RGBA(45, 45, 45, 1);
 }
 .grid {
     text-align: justify;
     font-size: 0.1px;
 }
 .grid > * {
-    padding-left:10px;
+    padding-left: 10px;
     display: inline-block;
     text-align: left;
     vertical-align: top;
