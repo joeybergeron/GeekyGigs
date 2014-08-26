@@ -134,9 +134,18 @@ h2 {
     position:fixed;
     top:0px;
     left:50%;
+    width:100%;
     transform:translateX(-50%);
     padding-right:20px;
     padding-left:20px;
+}
+.stick h1 {
+    display:none;
+}
+.tag {
+    position:fixed;
+    top:0px;
+    right:0px;
 }
 /* turn lodash data into link, remove HTML from description */
 

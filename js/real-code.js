@@ -20,16 +20,21 @@
 
 $(document).ready(function() {
     var s = $("#searchForm");
-    
+    var t = $("#tag");
     var pos = s.position();
+    var post = t.position();
     
     $(window).scroll(function() {
         var windowpos = $(window).scrollTop();
 
         if (windowpos >= pos.top) {
             s.addClass("stick");
+            t.addClass("tag");
+            
         } else {
             s.removeClass("stick"); 
+            t.removeClass("tag");
+
         }
     });
 });
