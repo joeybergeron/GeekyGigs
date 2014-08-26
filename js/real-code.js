@@ -21,38 +21,51 @@
 $(document).ready(function() {
     var s = $("#searchForm");
     var t = $("#tag");
+    var g = $(".grid-header");
     var pos = s.position();
     var post = t.position();
-    
+    var posg = g.position();
+
     $(window).scroll(function() {
         var windowpos = $(window).scrollTop();
 
         if (windowpos >= pos.top) {
             s.addClass("stick");
-            t.addClass("tag");
-            
-        } else {
-            s.removeClass("stick"); 
-            t.removeClass("tag");
 
+        } else {
+            s.removeClass("stick");
+        }
+
+        if (windowpos >= pos.top + 23) {
+            t.addClass("tag");
+
+        } else {
+            t.removeClass("tag");
+        }
+
+        if (windowpos >= pos.top + 23) {
+            g.addClass("head1");
+
+        } else {
+            g.removeClass("head1");
         }
     });
 });
 
 var JobsView = Backbone.View.extend({
 
-	scrollStop: function(){
-		var s = $("form");
-		var pos = s.position();
-		$(window).scroll(function() {
-			var windowpos = $(window).scrollT
-			if (windowpos >= pos.top) {
-				s.addClass("form");
-			} else {
-				s.removeClass("form");
-			}
-		});
-	},
+    scrollStop: function() {
+        var s = $("form");
+        var pos = s.position();
+        $(window).scroll(function() {
+            var windowpos = $(window).scrollT
+            if (windowpos >= pos.top) {
+                s.addClass("form");
+            } else {
+                s.removeClass("form");
+            }
+        });
+    },
 
     el: document.querySelector(".searchContainer"),
 
@@ -109,33 +122,33 @@ var JobsView = Backbone.View.extend({
         });
 
         $.when(
-        	ajCollection.fetch(),
+            ajCollection.fetch(),
             this.getTemplateFill()
         ).then(function(data, templateFn) {
             var HTML = "";
             _.forEach(data[0].listings.listing, function(oneListing) {
                 console.log(oneListing);
 
-                if(!oneListing.company){
+                if (!oneListing.company) {
                     oneListing.company = {
                         url: oneListing.url,
                         name: "",
                     }
                 }
 
-                if(!oneListing.company.location) {
+                if (!oneListing.company.location) {
                     oneListing.company.location = {};
                 }
-                if(!oneListing.company.location){
+                if (!oneListing.company.location) {
                     oneListing.company.location.city = "";
                 }
 
-                if(oneListing.apply_url){
-                	oneListing.apply_link = oneListing.apply_url;
+                if (oneListing.apply_url) {
+                    oneListing.apply_link = oneListing.apply_url;
                 } else if (oneListing.apply_email) {
-                	oneListing.apply_link = "mailto:"+oneListing.apply_email;
+                    oneListing.apply_link = "mailto:" + oneListing.apply_email;
                 } else {
-                	oneListing.apply_link = "#";
+                    oneListing.apply_link = "#";
                 }
 
                 oneListing.post_date = moment(oneListing.post_date, "YYYY-MM-DD hh:mm:ss").format('LL')

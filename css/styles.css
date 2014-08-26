@@ -49,7 +49,7 @@ header {
 }
 p {
     right: 0;
-    top: 35px;
+    top: 53px;
     animation: tag 2s;
     padding-left: 30px;
     padding-right: 30px;
@@ -58,7 +58,7 @@ p {
     position: fixed;
     color: white;
     text-shadow: 3px 3px 3px #111;
-    background-color: rgba(3, 3, 3, .7);
+    background-color: rgba(3, 3, 3, .9);
     /*transform:translateX(10px);*/
 }
 @-webkit-keyframes tag {
@@ -93,15 +93,23 @@ input:focus {
 button:focus {
     background-color: #222;
 }
+input:hover {
+    background-color:#222;
+    color:RGBA(30,113,183,.7);
+}
+input:active {
+    background-color:#222;
+    color:RGBA(30,113,183,.7);
+}
 form {
     display:block;
-    max-width: 48%;
+    /*max-width: 48%;*/
     margin:0 auto;
     border-radius:4px;
     padding-top:1em;
     padding-bottom: 1em;
     text-align: center;
-    background-color:rgba(3, 3, 3, .85);
+    background-color:rgba(3, 3, 3, .9);
 }
 h1 {
     /*padding-top: 100px;*/
@@ -123,26 +131,38 @@ h2 {
     border: 2px outset black;
 }
 .grid-header {
-    background-color: RGBA(3, 3, 3, 1);
+    background-color: RGBA(3, 3, 3, .9);
     border-bottom: 2px solid black;
 }
 .templateDestination .grid {
     padding: 16px 0;
     border-bottom: 2px outset rgba(10, 10, 10, 0.4);
 }
+
+
+/*-------------------------------------------------scroll stickies
+*/
 .stick {
+    transition: all .20s ease;
     position:fixed;
     top:0px;
     left:50%;
-    width:800px;
+    width:100%;
     transform:translateX(-50%);
+}
+.head1 {
+    transition: all .20s ease;
+    position:fixed;
+    top:106px;
+    width:100%;
 }
 .stick h1 {
     display:none;
 }
 .tag {
+    transition: all .20s ease;
     position:fixed;
-    top:0px;
+    top:157px;
     right:0px;
 }
 /* turn lodash data into link, remove HTML from description */
