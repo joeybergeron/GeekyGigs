@@ -103,7 +103,7 @@ input:active {
 }
 form {
     display:block;
-    /*max-width: 48%;*/
+    width: 48%;
     margin:0 auto;
     border-radius:4px;
     padding-top:1em;
@@ -159,6 +159,7 @@ h2 {
 .stick h1 {
     display:none;
 }
+
 .tag {
     transition: all .20s ease;
     position:fixed;
