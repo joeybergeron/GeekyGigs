@@ -52,7 +52,7 @@ p {
     top: 53px;
     animation: tag 2s;
     padding-left: 10px;
-    padding-bottom:20px;
+    padding-bottom: 20px;
     padding-right: 30px;
     border-radius: 4px;
     font-size: 1.8em;
@@ -60,18 +60,21 @@ p {
     color: white;
     text-shadow: 3px 3px 3px #111;
     background-color: rgba(3, 3, 3, .9);
+    display: inline-block;
     /*transform:translateX(10px);*/
 }
 img {
-    position:relative;
-    top:19px;
+    position: relative;
+    top: 19px;
 }
-@-webkit-keyframes tag {
+@keyframes tag {
     0% {
-        left: -10%;
+        opacity: 0;
+        transform: translateX(-1024px);
     }
     100% {
-        left: 85%;
+        opacity: 1;
+        transform: translateX(0);
     }
 }
 select {
@@ -108,7 +111,7 @@ input:active {
 }
 form {
     display: block;
-    width: 48%;
+    width: 800px;
     margin: 0 auto;
     border-radius: 4px;
     padding-top: 1em;
@@ -181,11 +184,11 @@ a {
     /*color: inherit;*/
 }
 a:hover {
- text-decoration: none;
- color: #a3211f;
+    text-decoration: none;
+    color: #a3211f;
 }
 a:visited {
-    color:indigo;
+    color: indigo;
 }
 #title {
     font-weight: bold;
@@ -219,5 +222,37 @@ a:visited {
 @media (min-width: 800px) {
     .grid-7-800 > * {
         width: 20%;
+    }
+}
+@media (min-width: 600px) and (max-width: 799px) {
+    form {
+        width: 600px;
+    }
+}
+@media (min-width: 350px) and (max-width: 799px) {
+    .grid-header {
+        display: none;
+    }
+    input {
+        border: 3px solid RGBA(12, 18, 26, 1);
+        border-radius: 4px;
+    }
+    .tag {
+        top: 106px;
+    }
+}
+@media (min-width: 400px) and (max-width: 599px) {
+    form {
+        width: 400px;
+    }
+}
+@media (min-width: 641px) and (max-width: 768px) {
+    .tag {
+        top: 176px;
+    }
+}
+@media (max-width: 640px) {
+    .tag {
+        display: none;
     }
 }
