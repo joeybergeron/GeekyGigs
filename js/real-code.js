@@ -29,7 +29,7 @@ $(document).ready(function() {
     $(window).scroll(function() {
         var windowpos = $(window).scrollTop();
 
-        if (windowpos >= pos.top) {
+        if (windowpos >= pos.top + 23) {
             s.addClass("stick");
 
         } else {
