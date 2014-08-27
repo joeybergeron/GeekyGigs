@@ -26,6 +26,7 @@ header {
     position: fixed;
     font-size: 1.5em;
 }
+/*-------------------------------------------SEARCH NAV & PARALLAX*/
 .parallax {
     /*height:50vh;*/
     /*text-indent: -9999px;*/
@@ -67,6 +68,7 @@ img {
     position: relative;
     top: 19px;
 }
+/*---------------------------------------ADDS ANIMATION TO GG TAG*/
 @keyframes tag {
     0% {
         opacity: 0;
@@ -77,6 +79,7 @@ img {
         transform: translateX(0);
     }
 }
+/*----------------------------------------FORM & INPUTS*/
 select {
     height: 60px;
     width: 200px;
@@ -134,6 +137,7 @@ h2 {
     color: white;
     text-shadow: 3px 3px 3px black;
 }
+/*------------------------------------------------JOB CONTAINER & TEMPLATE DIVS*/
 .jobContainer {
     background: white;
     border: 2px outset black;
@@ -172,12 +176,6 @@ h2 {
     top: 157px;
     right: 0px;
 }
-/* turn lodash data into link, remove HTML from description */
-
-/**
- * ------------------------------------------------------- grids
- */
-
 a {
     text-decoration: inherit;
     /*font-style: inherit;*/
@@ -194,6 +192,12 @@ a:visited {
     font-weight: bold;
     color: RGBA(45, 45, 45, 1);
 }
+/* turn lodash data into link, remove HTML from description */
+
+/**
+ * ------------------------------------------------------- grids
+ */
+
 .grid {
     text-align: justify;
     font-size: 0.1px;
@@ -219,6 +223,7 @@ a:visited {
     font-size: 1rem;
     width: 100%;
 }
+/*---------------------------------------------------MEDIA QUERIES*/
 @media (min-width: 800px) {
     .grid-7-800 > * {
         width: 20%;

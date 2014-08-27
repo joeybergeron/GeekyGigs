@@ -16,7 +16,8 @@
 //     }
 // })
 
-////////////////////// VIEW ////////////////////////
+
+///////////////////////// MAKES DIVS REORGANIZE ON SCROLL////////////////////////
 
 $(document).ready(function() {
     var s = $("#searchForm");
@@ -51,6 +52,9 @@ $(document).ready(function() {
         }
     });
 });
+
+
+////////////////////// VIEW ////////////////////////
 
 var JobsView = Backbone.View.extend({
 
