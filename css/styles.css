@@ -142,13 +142,16 @@ h2 {
     background: white;
     border: 2px outset black;
 }
+.grid-7-800 {
+    background-color:RGBA(255, 255, 243, 1);
+}
 .grid-header {
     background-color: RGBA(3, 3, 3, .9);
     border-bottom: 2px solid black;
 }
 .templateDestination .grid {
     padding: 16px 0;
-    border-bottom: 2px outset rgba(10, 10, 10, 0.4);
+    border-bottom: 4px solid rgba(10, 10, 10, 0.3);
 }
 /*-------------------------------------------------scroll stickies
 */
@@ -177,7 +180,8 @@ h2 {
     right: 0px;
 }
 a {
-    text-decoration: inherit;
+    text-decoration: underline;
+    color:black;
     /*font-style: inherit;*/
     /*color: inherit;*/
 }
@@ -191,7 +195,9 @@ a:visited {
 #title {
     font-weight: bold;
     color: RGBA(45, 45, 45, 1);
+
 }
+
 /* turn lodash data into link, remove HTML from description */
 
 /**
@@ -212,6 +218,8 @@ a:visited {
     width: 100%;
     transition: all .20s ease;
 }
+
+
 .grid > .head {
     font-size: 30px;
     color: white;

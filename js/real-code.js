@@ -17,15 +17,13 @@
 // })
 
 
-///////////////////////// MAKES DIVS REORGANIZE ON SCROLL////////////////////////
+///////////////////////// MAKES DIVS REORGANIZE ON SCROLL ////////////////////////
 
 $(document).ready(function() {
     var s = $("#searchForm");
     var t = $("#tag");
     var g = $(".grid-header");
     var pos = s.position();
-    var post = t.position();
-    var posg = g.position();
 
     $(window).scroll(function() {
         var windowpos = $(window).scrollTop();
