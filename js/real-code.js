@@ -23,31 +23,26 @@ $(document).ready(function() {
     var s = $("#searchForm");
     var t = $("#tag");
     var g = $(".grid-header");
-    var pos = s.position();
+
+    var isSticking = false;
 
     $(window).scroll(function() {
         var windowpos = $(window).scrollTop();
+        var pos = s.position();
+        var shouldSetSticky = windowpos >= pos.top + 23;
 
-        if (windowpos >= pos.top + 23) {
+        if (shouldSetSticky && !isSticking) {
             s.addClass("stick");
-
-        } else {
-            s.removeClass("stick");
-        }
-
-        if (windowpos >= pos.top + 23) {
             t.addClass("tag");
-
-        } else {
-            t.removeClass("tag");
-        }
-
-        if (windowpos >= pos.top + 23) {
             g.addClass("head1");
-
-        } else {
+            isSticking = true;
+        } else if(!shouldSetSticky && isSticking){
+            s.removeClass("stick");
+            t.removeClass("tag");
             g.removeClass("head1");
+            isSticking = false;
         }
+
     });
 });
 
