@@ -242,9 +242,12 @@ a:visited {
         width: 600px;
     }
 }
-@media (min-width: 350px) and (max-width: 799px) {
+@media screen and (min-width: 350px) and (max-width: 798px) {
     .grid-header {
         display: none;
+    }
+    .grid-7-800 > * {
+        width:100%;
     }
     input {
         border: 3px solid RGBA(12, 18, 26, 1);
@@ -254,17 +257,17 @@ a:visited {
         top: 106px;
     }
 }
-@media (min-width: 400px) and (max-width: 599px) {
+@media screen and (min-width: 400px) and (max-width: 599px) {
     form {
         width: 400px;
     }
 }
-@media (min-width: 641px) and (max-width: 768px) {
+@media screen and (min-width: 641px) and (max-width: 768px) {
     .tag {
         top: 176px;
     }
 }
-@media (max-width: 640px) {
+@media screen and (max-width: 640px) {
     .tag {
         display: none;
     }
