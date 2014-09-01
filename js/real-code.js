@@ -46,7 +46,6 @@ $(document).ready(function() {
     });
 });
 
-
 ////////////////////// VIEW ////////////////////////
 
 var JobsView = Backbone.View.extend({
